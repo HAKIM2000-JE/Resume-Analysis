@@ -7,17 +7,25 @@ import Info from '../components/Info';
 import ImgView from '../components/ImgView';
 import Footer from '../components/Footer';
 
+
+
 export default function Home() {
   return (
+    
     <div className="bg-light">
       <Navbar />
       <Hero />
-      <Services />
+
+      <div id="services">
+      <Services  />
+        
+      </div>
       <Clients />
       <Testimonial />
       <Info />
       <ImgView />
       <Footer />
+      
     </div>
   )
 }

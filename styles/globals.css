@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 @import url('http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext');
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap');
+
+@font-face {
+    font-family: "another";
+    src: url("/fonts/CoveredByYourGrace-Regular.ttf");
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+  }
+
+  html{
+    scroll-behavior: smooth;
+  }
 
 body{
     margin: 0;
@@ -9,7 +22,19 @@ body{
     overflow-x: hidden;
     font-family: lato, sans-serif;
 }
+h2{
+    color: #000;
+}
 
+
+.text_slide{
+  font-family: 'Covered By Your Grace', cursive;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 39.4714px;
+  line-height: 53px;
+  
+}
 .hero-bg {
     background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('/images/Group 12999.png');
     background-repeat: no-repeat;
@@ -24,8 +49,175 @@ body{
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: contain;
+} 
+
+.list_container{
+    height: 65px;
+    z-index: -1;
+    overflow: hidden;
 }
 
-iphone{
+
+
+.parallax{
+    transform: translateZ(0px);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  perspective: 8px;
+  perspective-origin: 0%;
+  display: flex;
+}
+.parallax img {
+    margin-top: auto;
+  margin-bottom: 50px;
+  
+  transform-origin: 0;
+  transform: translateZ(3px) 
+   
+}
+
+
+
+
+.slider {
+    width: 70%;
+   
+    overflow: visible;
+    margin-top: 50px;
+}
+
+
+@media (max-width: 768px) {
+  .slider {
+    width: 100%;
+   
     
 }
+
+.text_slide{
+  font-family: 'another';
+  font-size: 40px;
+  font-style: italic;
+  
+}
+
+}
+.slider ul {
+    display: flex;
+    padding: 0;
+  
+    background-color: #f7f8fb;
+    height: 100px;
+    width: 100%;
+    justify-content: space-between;
+   
+}
+.slider li {
+
+    padding: 10px;
+    list-style: none;
+    margin-top: 30px;
+}
+.slider img{
+   height: 50px;
+   object-fit: contain;
+}
+
+
+input[type="number"] {
+    width: 40px;
+    padding: 4px 5px;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+  }
+  
+  /* input[type="range"]:focus,
+  input[type="number"]:focus {
+    box-shadow: 0 0 3px 1px #4b81dd;
+    outline: none;
+  } */
+  
+  input[type="range"] {
+    -webkit-appearance: none;
+    margin-right: 15px;
+    width: 100%;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    background-image: linear-gradient(#fb7c51, #fb7c51);
+    background-size: 70% 100%;
+    background-repeat: no-repeat;
+  }
+  
+  /* Input Thumb */
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background: #e0e0df;
+    border: 4px solid #fb7c51;
+    cursor: ew-resize;
+    box-shadow: 0 0 2px 0 #555;
+    transition: background .3s ease-in-out;
+  }
+  
+  input[type="range"]::-moz-range-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #fb7c51;
+    cursor: ew-resize;
+    box-shadow: 0 0 2px 0 #555;
+    transition: background .3s ease-in-out;
+  }
+  
+  input[type="range"]::-ms-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #fb7c51;
+    cursor: ew-resize;
+    box-shadow: 0 0 2px 0 #555;
+    transition: background .3s ease-in-out;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb:hover {
+    background: #ff0200;
+  }
+  
+  input[type="range"]::-moz-range-thumb:hover {
+    background: #ff0200;
+  }
+  
+  input[type="range"]::-ms-thumb:hover {
+    background: #ff0200;
+  }
+  
+  /* Input Track */
+  input[type=range]::-webkit-slider-runnable-track  {
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+  }
+  
+  input[type=range]::-moz-range-track {
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+  }
+  
+  input[type="range"]::-ms-track {
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+  }
+  
+  
+  
+  
