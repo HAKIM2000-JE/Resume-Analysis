@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState , useEffect } from 'react';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
 import ReactPlayer from 'react-player';
@@ -10,6 +10,43 @@ const ImgView = () => {
 
     const onOpenModal = () => setOpen(true);
     const onCloseModal = () => setOpen(false);
+    const [ismobile , setismobile] = useState(false)
+
+    const [istablet , settablet] = useState(false)
+
+    const [size, setsize] = useState(1000)
+
+
+    const checkview =()=>{
+
+      if(window.innerWidth<800){
+          setsize(400)
+          
+      }else if(window.innerWidth>800 && window.innerWidth<1200){
+        setsize(750)
+        
+
+      }else{
+        setsize(1000)
+      }
+        
+  }
+
+
+  useEffect(() => {
+
+    checkview()
+
+  
+        window.addEventListener("resize", checkview);
+    
+        
+    
+   
+   
+    }, []);
+
+
 
     return (
         <div className="bg-light">
@@ -17,7 +54,16 @@ const ImgView = () => {
                 <h2 className="font-bold leading-10"> <span className="text-orange">Seamlessly progress</span> candidate from <br /> one stage to another</h2>
             </div>
             <div className="flex flex-col justify-center w-5/6 mx-auto">
-                <OwnImage src="/images/Group 12846.svg" layout="fill"  width={1300}  alt="" />
+
+            <div className="w-9/12   md:mx-auto  ">
+
+           
+            <OwnImage src="/images/Group 12846.svg" layout="fill"  width={size}  alt="" />
+                 
+
+            
+              
+            </div>
                 <div className="text-center pt-5 pb-12">
                     <button className="text-orange border-2 border-orange rounded-md py-2 px-8" onClick={onOpenModal} >How it works?</button>
                 </div>

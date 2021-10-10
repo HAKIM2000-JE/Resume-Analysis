@@ -43,14 +43,12 @@ const Testimonial = () => {
                         <div className=" flex justify-between">
                             <div className="quote my-10">
                                 <div className="flex">
-                                    <img src="/images/quote.svg" className="w-4 h-4 inline -mt-2 mr-2" alt="" /> 
+                                    <OwnImage src="/images/quote.svg" layout="fill"  width={70} alt="" /> 
                                     <p className="text-xl">
                                         Lorem Ipsum is a great font Lorem Ipsum is a great qfeg <br /> font Lorem Ipsum is a great font Lorem Ipsum is gdgdgd <br /> great font gdg
                                     </p>
                                 </div>
-                                <div className="w-full text-right">
-                                <div className="text-orange text-3xl font-bold mr-14">//</div>
-                                </div>
+                                
                             </div>
                             <OwnImage  src="/images/Vector 1959.png" layout="fill"  width={70}  alt="" />
                         </div>
@@ -63,31 +61,34 @@ const Testimonial = () => {
                             <h3 className="text-2xl font-bold self-center text-gray-600 ml-5">Posidex Technologies</h3>
                         </div>
                     </div>
-                    <div className="video mt-5 ml-2 mx-auto w-9/12 rounded-full transform-none p-0 ">
-                    <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' onPlay={()=>{ setplaying(true)
-                        }} onPause={()=>setplaying(false)}  className="w-full h-full rounded-2xl" style={{borderRadius:'150px'}}
-                   />
+
+
+                    <div className=" w-10/12 relative h-96 top-5 mr-44 ">
+                         
+                    <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U'  onPlay={()=>{ setplaying(true)
+                }} onPause={()=>setplaying(false)} 
+           />
+            
                     </div>
+                  
                 </div>
             </div>
             :
             <div className="bg-white px-20 py-32">
             <div className="flex items-start">
                 <OwnImage src="/images/quote.png" layout="fill"  width={70} alt="" /> 
-                <p className="text-2xl">
+                <p className=" text-md  md:text-xl lg:text-2xl">
                 Lorem Ipsum Lorem Ipsum is a great font Lorem Ipsum is a great qfeg font Lorem Ipsum is a great font Lorem Ipsum is gdgdgd <br /> great fon Ipsum is a great font Lorem Ipsum is a great qfeg font Lorem Ipsum is a great font Lorem Ipsum is gdgdgd great fon a <br /> great font Lorem Ipsum is a great qfeg Lorem Ipsum is a great font Lorem Ipsum is a great qfeg font Lorem Ipsum is a great <br /> ont L Ipsum is a great font Lorem Ipsum is a great qfeg fongdgd great fon
                 </p>
             </div>
-            <div className="w-full text-right">
-                <div className="text-orange text-4xl font-bold">//</div>
-            </div>
-            <div className="flex justify-end">
+          
+            <div className="md:flex justify-end mx-auto">
             <div className="w-full text-right flex justify-end items-center p-5">
             <h4 className="mr-4">Kiran Chennadi <small className="block text-sm">Head of HR & Talent Acquisition</small></h4>
             <OwnImage src="/images/Brian 1.png" layout="fill"  width={70} alt="" />
         </div>
         <div className="bg-light flex p-4 mt-5">
-            <img src="/images/MicrosoftTeams-image (4) (1).svg" alt="" />
+            <OwnImage src="/images/MicrosoftTeams-image (4) (1).svg" layout="fill"  width={70} alt="" />
             <h3 className="text-2xl font-bold self-center text-gray-600 ml-5">Posidex Technologies</h3>
         </div>
             </div>

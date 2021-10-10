@@ -5,6 +5,7 @@ import ScrollLock, { TouchScrollable } from 'react-scrolllock';
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 
+
 import OwnImage from './Image';
 
 // install Swiper modules
@@ -22,7 +23,7 @@ import {
 
 
 
-import Image from 'next/image'
+import 'swiper/css/bundle'
 const Services = () => {
 
     const [progress, setProgress] = useState(25);
@@ -57,6 +58,7 @@ const Services = () => {
 
         if(window.innerWidth<1200){
             setismobile(true)
+            setLockscroll(false)
         }else{
             setismobile(false)
         }
@@ -77,6 +79,7 @@ const Services = () => {
 
     useEffect(() => {
         
+        checkview()
         switch(section){
             case 1:
                 setProgress(25);
@@ -113,7 +116,7 @@ const Services = () => {
        
 
         
-    }, [section])
+    }, [section , ismobile])
 
 
     useEffect(() => {
@@ -243,18 +246,22 @@ const Services = () => {
                  </>
             ):(
                 <>
+         
+      
                 <Swiper
                 spaceBetween={50}
+                id="swiper-color"
                 slidesPerView={1}
                 navigation
                 pagination={{ clickable: true }}
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
-                className=""
+               
+
             >
 
                     
-                <SwiperSlide className=" w-full ">
+                <SwiperSlide className=" w-full text-orange ">
                 <div className={`flex my-5 w-9/12 mx-auto `}>
                 <div className={`border-4 rounded-full  border-orange`}>
                 </div>
@@ -268,9 +275,9 @@ const Services = () => {
                     </p>
                 </div>
             </div>
-            <div className={`w-3/5 flex   mt-1 mx-auto lg:mt-0   items-center`}>
+            <div className={`w-4/5   mt-1 mx-auto lg:mt-0  grid place-items-center `}>
             <div >
-                <img className={` mx-auto lg:top-44 lg:right-60`} src={`/images/Group 12974.png`} alt="" />
+                <OwnImage  layout="fill"  width={360}  src={`/images/Group 12974.png`} alt="" />
                 
               
             </div>
@@ -295,9 +302,9 @@ const Services = () => {
 
             <div className={`w-3/5 flex   mt-1 mx-auto lg:mt-0  mr-28 md:mr-14 items-center`}>
             <div className={` flex flex-col mx-auto`}>
-                <img className={` mx-auto lg:top-44 lg:right-60`} src={`/images/Group 12835.png`} alt="" />
+                <OwnImage  layout="fill"  width={360} src={`/images/Group 12835.png`} alt="" />
                 
-                { <img src="/images/Group 12979.png" className="w-3/5 mx-auto h-36" alt="" />  }
+                { <div className="relative left-10 mb-28 "><OwnImage  layout="fill"  width={280} src="/images/Group 12979.png"  alt="" /></div>  }
             </div>
         </div>
                    
@@ -321,7 +328,7 @@ const Services = () => {
                  
             <div className={`w-3/5 flex   mt-1 mx-auto lg:mt-0  mr-28 md:mr-14 items-center`}>
             <div >
-                <img className={` mx-auto lg:top-44 lg:right-60`} src={`/images/Group 12998.png`} alt="" />
+                <OwnImage  layout="fill"  width={360} src={`/images/Group 12998.png`} alt="" />
                 
               
             </div>
@@ -348,7 +355,7 @@ const Services = () => {
 
             <div className={`w-3/5 flex   mt-1 mx-auto lg:mt-0  mr-28 md:mr-14 items-center`}>
             <div >
-                <img className={` mx-auto lg:top-44 lg:right-60`} src={`/images/Group 13002.png`} alt="" />
+                <OwnImage  layout="fill"  width={360} src={`/images/Group 13002.png`} alt="" />
                 
               
             </div>
@@ -359,7 +366,7 @@ const Services = () => {
             </Swiper>
                    
 
-            <span className="relative top-7 left-36 text-orange  ">Swipe to see other Services &gt; &gt; </span>
+           
                 </>
             )
         }

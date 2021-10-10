@@ -27,6 +27,20 @@ h2{
 }
 
 
+#swiper-color .swiper-button-next {
+  color: #fb7c51;
+}
+
+#swiper-color .swiper-button-prev {
+  color: #fb7c51;
+}
+
+#swiper-color .swiper-pagination-bullet-active {
+  background-color: #fb7c51;
+}
+
+
+
 .text_slide{
   font-family: 'Covered By Your Grace', cursive;
   font-style: normal;

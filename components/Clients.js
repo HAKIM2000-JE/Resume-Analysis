@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState , useEffect } from 'react';
 import CountUp from 'react-countup';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
@@ -11,6 +11,17 @@ const Clients = () => {
 
     const [start, setstart] = useState(false)
 
+
+    useEffect(() => {
+
+       window.addEventListener('scroll',()=>{
+           if(window.scrollY>850){
+               setstart(true)
+           }
+       })
+       
+       
+        }, []);
 
     function handleInputChange(e) {
         let target = e.target
@@ -40,83 +51,38 @@ const Clients = () => {
     </div>*/}
 
 
-    <div className=" w-7/12 mx-auto mt-16 ">
+    <div className="  md:w-9/12 lg:w-7/12 mx-auto mt-16 ">
     <Carousel autoPlay={true} infiniteLoop={true} transitionTime={1000} interval={2700} showStatus={false} showThumbs={false} >
-                <div>
+
+
+    <div>
                 <ul className="bg-gray-700 w-full justify-between">
+
+
+
+                <div className="w-2/12">
+           <OwnImage src="/images/image 69.svg" layout="fill"  width={70} alt="" />
+                  
+                </div>
            
          
-              
-          <OwnImage  src="/images/image 69.svg"  layout="fill"  width={70}  alt="" />
-                               
-
           
-          <div className="mt-2">
-           <OwnImage src="/images/Rectangle 3908.svg" layout="fill"  width={180} alt="" />
-             
-           </div>
-           <div className="mt-4">
+
+
+
+           <div className="mt-2 w-2/12 mr-5 ">
            <OwnImage src="/images/image 67.svg" layout="fill"  width={130} alt="" />
 
 
            </div>
+
+           <div className=" w-2/12 mr-5">
            <OwnImage src="/images/MicrosoftTeams-image (4).svg" layout="fill"  width={90} alt="" />
-           
-         
-   
-               
-   
-             
-          
-   
-                                  
-              </ul>
-                 
-                </div>
-                <div>
-                <ul className="bg-gray-700 w-full justify-between">
-           
-         
-           <OwnImage src="/images/image 69.svg" layout="fill"  width={70} alt="" />
-           <div className="mt-2">
-           <OwnImage src="/images/Rectangle 3908.svg" layout="fill"  width={180} alt="" />
              
            </div>
-           <OwnImage src="/images/MicrosoftTeams-image (4).svg" layout="fill"  width={90} alt="" />
-           <div className="mt-4">
-           <OwnImage src="/images/MicrosoftTeams-image (3).svg" layout="fill"  width={170} alt="" />
-             
-           </div>
-       
          
-   
-               
-   
-             
-          
-   
-                                  
-              </ul>
-                
-                </div>
-                <div>
-                <ul className="bg-gray-700 w-full justify-between">
-           
-         
-           <OwnImage src="/images/image 69.svg" layout="fill"  width={70} alt="" />
-          
 
-
-
-           <div className="mt-4">
-           <OwnImage src="/images/image 67.svg" layout="fill"  width={130} alt="" />
-
-
-           </div>
-         
-           <OwnImage src="/images/MicrosoftTeams-image (4).svg" layout="fill"  width={90} alt="" />
-
-           <div className="mt-4">
+           <div className="mt-4 w-2/12 hidden md:flex">
            <OwnImage src="/images/MicrosoftTeams-image (3).svg" layout="fill"  width={170} alt="" />
              
            </div>
@@ -132,6 +98,79 @@ const Clients = () => {
               </ul>
                     
                 </div>
+                <div>
+                <ul className="bg-gray-700 w-full md:justify-between justify-evenly">
+           
+         
+              <div className=" w-2/12">
+          <OwnImage  src="/images/image 69.svg"  layout="fill"  width={70}  alt="" />
+                
+              </div>
+                               
+
+          
+          <div className="mt-2 w-2/12 mr-24">
+           <OwnImage src="/images/Rectangle 3908.svg" layout="fill"  width={180} alt="" />
+             
+           </div>
+           <div className="mt-4 w-2/12 mr-16">
+           <OwnImage src="/images/image 67.svg" layout="fill"  width={130} alt="" />
+
+
+           </div>
+           <div className=" w-2/12 hidden md:flex">
+           <OwnImage src="/images/MicrosoftTeams-image (4).svg" layout="fill"  width={90} alt="" />
+              
+           </div>
+           
+         
+   
+               
+   
+             
+          
+   
+                                  
+              </ul>
+                 
+                </div>
+                <div>
+                <ul className="bg-gray-700 w-full justify-between">
+
+
+                <div className="w-2/12">
+                    <OwnImage src="/images/image 69.svg" layout="fill"  width={70} alt="" />
+                   
+                </div>
+           
+         
+           <div className="mt-2 w-2/12 mr-16">
+           <OwnImage src="/images/Rectangle 3908.svg" layout="fill"  width={180} alt="" />
+             
+           </div>
+
+           <div className=" w-2/12 mr-5">
+           <OwnImage src="/images/MicrosoftTeams-image (4).svg" layout="fill"  width={90} alt="" />
+             
+           </div>
+
+           <div className="mt-4 w-2/12 hidden md:flex">
+           <OwnImage src="/images/MicrosoftTeams-image (3).svg" layout="fill"  width={170} alt="" />
+             
+           </div>
+       
+         
+   
+               
+   
+             
+          
+   
+                                  
+              </ul>
+                
+                </div>
+                
             </Carousel>
     </div>
 
